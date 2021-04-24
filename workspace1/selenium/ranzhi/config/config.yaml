@@ -1,0 +1,7 @@
+LoginPage:
+  #用户名
+  ACCOUNT: 'id,account'
+  #密码
+  PASSWORD: 'id,password'
+  #登陆
+  SUBMIT: 'id,submit'

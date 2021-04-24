@@ -1,0 +1,45 @@
+<!-- HTML Hyper Text Markup Language 超文本标记语言-->
+<!Doctype HTML> <!-- 指定html的版本 -->
+<!--标签，<html>:开始标签，</html>：结束标签-->
+<!-- html 称为根标签 -->
+<html> <!--父标签-->
+    <!-- 标签体 -->
+    <!--子标签-->
+    <head>
+        <title>这是我的第一个HTML作品</title>
+        <!-- charset: 属性attribute ; "utf-8":属性的值 -->
+        <meta charset="utf-8"> <!--单标签：当没有标签体时，可以省略结束标签-->
+        <!-- 
+            CSS Cascading Style Sheet 层叠样式表
+         -->
+        <style>
+            /* 给页面上所有的h1元素添加样式 */
+            h1 {
+                color:red;
+            }
+            /* 类class选择器 */
+            .star {
+                color:green;
+            }
+        </style>
+        <!-- 引入外部样式 -->
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            // Javacript
+            console.log('Hello HTML！')
+        </script>
+        <!-- 引入外部js代码 -->
+        <script src="demo.js"></script>
+    </head> 
+    <!-- 兄弟标签 -->
+    <body>
+        <h1 class='star'>2020马上就要结束啦！</h1>
+        <p class="star moon">今年发生好多事，新冠，川普败选，中国取回月壤，长沙超导马克装置成功</p>
+        <!-- 给按钮绑定单击事件 -->
+        <button onclick="f();">欢迎</button>
+    </body>
+    <footer>
+
+    </footer>
+</html> 

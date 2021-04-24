@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+    <script></script>
+</head>
+<body>
+    <!-- 表单用来收集用户信息 -->
+    <form action="https://www.baidu.com/">
+        <!-- input -->
+        <!-- 文本输入框 -->
+        账号: <input type="text" name='account'>
+        <br>
+        <!-- 密码输入框 -->
+        密码: <input type="password" name="password">
+        <br>
+        <!-- 单选 -->
+        性别: <!-- gender=1 -->
+            男<input type="radio" name="gender" id="" value="1">
+            女<input type="radio" name="gender" id="" value="0">
+        <br>
+        <!-- 多选 -->
+        爱好:
+            篮球 <input type="checkbox" name="hobby" id="" value="basketball">
+            足球 <input type="checkbox" name="hobby" id="" value="football">
+            游戏 <input type="checkbox" name="hobby" id="" value="game">
+        <br>
+        籍贯:
+        <!-- 下拉选择框 -->
+        <select name="province" id="">
+            <option value="0">-请选择-</option>
+            <option value="1">陕西</option>
+            <option value="2">江苏</option>
+            <option value="3">贵州</option>
+        </select>
+        <select name="" id="">
+            <option value="">-请选择-</option>
+        </select>
+        <br>
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>

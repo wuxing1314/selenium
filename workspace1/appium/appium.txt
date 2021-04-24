@@ -1,0 +1,108 @@
+APPIUM环境搭建
+
+1.  JDK  Java Development Kit
+    JAVA_HOME: D:\abc9\jdk1.8.0_144
+    PATH: %JAVA_HOME%\bin
+
+2.  Android SDK Android Software Development Kit
+    ANDROID_HOME: C:\android-sdk-windows
+    PATH: %ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools
+
+3.  安装夜神模拟器
+    https://www.yeshen.com
+
+4.  adb连接夜神模拟器
+    adb devices
+    如果现实如下结果，则表示连接正常
+    List of devices attached
+    127.0.0.1:62001 device
+
+5.  执行adb命令
+    方式一：
+        进入adb终端
+        adb shell
+        执行adb命令
+        monkey 1000
+    方式二：
+        不进入adb终端
+        adb shell monkey 1000
+
+6.  常用adb命令
+    adb shell monkey 1000
+        -向模拟器发送1000条伪随机事件
+
+    adb shell pm list packages
+        -获取包名列表
+    
+    adb shell dumpsys | find "mFocusedActivity"
+        -获取当前正在运行的app的包名(package)
+
+    aapt dump badging d:\baiduwenku_6520.apk
+        -对安装包进行反编译操作
+        
+        使用aapt反编译命令
+        -将下列路径添加到环境变量path中
+        -%ANDROID_HOME%\build-tools\29.0.3;
+
+    adb install d:\com.mt.mtxx.mtxx.apk
+        -安装指定的app
+    
+    adb uninstall com.mt.mtxx.mtxx
+        -卸载app
+
+    adb shell monkey -p com.android.browser 1000
+        -向指定的app发送伪随机命令
+        -p 指定包名
+    
+    adb shell monkey -p com.android.browser -v 1000
+    adb shell monkey -p com.android.browser -v -v 1000
+    adb shell monkey -p com.android.browser -v -v -v 1000
+        -v 表示输出日志，v越多，信息越详细
+
+    
+    adb shell monkey -p com.android.browser -v -v -v 1000 > d:\monkey.log
+        - 重定向日志到文件中
+        - >: 覆盖模式       > >:追加模式
+
+    adb shell monkey -p com.mt.mtxx.mtxx --throttle 100 -v -v -v 1000 > d:\monkey.log
+        --throttle milisecond   指定事件之间的时间间隔，单位是毫秒
+
+    adb shell monkey -p com.mt.mtxx.mtxx --throttle 100 -s 1610891184769 -v 100
+        -s 指定随机时间的seed值
+
+    adb shell monkey -p com.mt.mtxx.mtxx --throttle 100 -v --pct-touch 30 100
+    adb shell monkey -p com.mt.mtxx.mtxx --throttle 100 -v --pct-touch 30 --pct-motion 30 100
+        --pct-touch percentage   指定事件百分比
+            0： 触摸事件百分比，即参数--pct-touch
+            1： 滑动事件百分比，即参数--pct-motion
+            2： 缩放事件百分比，即参数--pct-pinchzoom
+            3： 轨迹球事件百分比，即参数--pct-trackball
+            4： 屏幕旋转事件百分比
+            5： 基本导航事件百分比，即参数--pct-nav
+            6： 主要导航事件百分比，即参数--pct-majornav
+            7： 系统事件百分比，即参数--pct-syskeys
+            8： Activity启动事件百分比，即参数--pct-appswitch
+            9： 键盘翻转事件百分比，即参数--pct-flip
+            10： 其它事件百分比，即参数--pct-anyevent
+
+7.  Appium
+    需要配置环境变量
+    APPIUM_HOME: C:\Program Files\Appium\resources\app\node_modules\appium
+
+8.  nodejs
+    需要配置环境变量
+    PATH: C:\nodejs;
+
+9.  Appium-Doctor
+    安装appium-doctor
+    npm install appium-doctor
+
+10. 配置Appium
+
+
+    -获取appActivity属性的值
+        -aapt dump badging d:\baiduwenku_6520.apk
+        -在结果中查找launchable-activity name=xxx 后面的值就是需要的属性值
+
+11. 安装appium-python-client
+    pip install appium-python-client
